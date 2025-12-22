@@ -1,13 +1,16 @@
 {
   "input": "./gallery",
   "output": "./build_output",
-  "title": "Photo Gallery",
-  "sort-albums-by": "title",
-  "sort-media-by": "filename",
+  "title": "中文kipfel厅 相册",
+  "thumb-size": 200,
+  "large-size": 1500,
+  "sort-albums-by": "date",
+  "sort-media-by": "date",
   "download-photos": "copy",
+  "video-download": "resize",
   "cleanup": true,
-  "theme": "cards",
+  "theme": "flow",
   "css": "./custom.css",
-  "footer": "Copyright Text",
-  "usage-stats": false
+  "footer": "该站点内所有媒体资料最终解释权归<a href=\"https://cn-kipfel.xchen.link">中文kipfel厅</a>所有",
+  "usage-stats": true
 }
