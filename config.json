@@ -11,6 +11,6 @@
   "cleanup": true,
   "theme": "flow",
   "css": "./custom.css",
-  "footer": "该站点内所有媒体资料最终解释权归<a href=\"https://cn-kipfel.xchen.link">中文kipfel厅</a>所有",
+  "footer": "该站点内所有媒体资料最终解释权归<a href=\"https://cn-kipfel.xchen.link\">中文kipfel厅</a>所有",
   "usage-stats": true
 }
