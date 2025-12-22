@@ -1,15 +1,49 @@
 {
   "input": "./gallery",
   "output": "./build_output",
+  
   "title": "中文kipfel厅 相册",
-  "thumb-size": 200,
-  "large-size": 1500,
-  "sort-albums-by": "date",
+
+  "scan-mode": "full",         // 扫描方式：full=全盘重建；partial=只追加新文件；incremental=基于数据库增量
+  "include-photos": true,      // 是否把普通照片编入画廊
+  "include-videos": true,      // 是否把视频编入画廊
+  "include-raw-photos": true, // 是否把 RAW 文件也编入（仅索引，不生成预览）
+  "thumb-size": 200,           // 方形缩略图边长（px）
+  "small-size": 300,           // 小图最大高度（px）
+  "large-size": 1500,          // 灯箱大图最大高度（px）
+  "photo-quality": 90,         // JPEG 压缩质量 0-100
+  "video-quality": 75,         // 转码后视频质量 0-100
+  "video-bitrate": "1200k",       // 手动指定视频码率
+  "video-format": "webm",       // 输出格式 mp4|webm
+  "video-hwaccel": "none",     // 硬件加速 none|vaapi（需同时给 bitrate）
+  "video-stills": "seek",      // 视频封面取帧方式 seek|middle
+  "video-stills-seek": 1,      // seek 模式下截取第几秒
+  "photo-preview": "resize",   // 灯箱照片生成方式 resize|copy|symlink|link
+  "video-preview": "resize",   // 同上，针对视频
+  "photo-download": "copy",  // 可下载照片生成方式
+  "video-download": "copy",  // 可下载视频生成方式
+  "concurrency": 4,            // 并行处理线程数
+  "output-structure": "folders", // 媒体文件组织方式 folders|suffix（后缀模式会把不同尺寸加 _lg、_th 等）
+  
+  /*=========== 相册（Album）逻辑 ===========*/
+  "albums-from": ["%path"],    // 按什么字段分相册
+  "home-album-name": "Home",   // 顶层“总相册”名称
+  "album-page-size": 16,     // 每相册分页显示数量，null=不分页
+  "album-zip-files": true,    // 是否为每个相册额外生成 zip 打包下载
+  "album-previews": "first",   // 相册封面选哪张 first|spread|random
+  
+  "sort-albums-by": "end-date",
+  "sort-albums-direction": "desc"
   "sort-media-by": "date",
+  "sort-media-direction": "desc",
   "download-photos": "copy",
   "video-download": "resize",
   "cleanup": true,
   "theme": "flow",
+
+  "embed-exif": true,         // 是否把 EXIF 信息嵌入页面
+  "locale": "zh",              // 界面语言，如 zh、en、de …
+  
   "css": "./custom.css",
   "footer": "该站点内所有媒体资料最终解释权归<a href=\"https://cn-kipfel.xchen.link\">中文kipfel厅</a>所有",
   "usage-stats": true
