@@ -21,11 +21,12 @@ jobs:
         uses:  actions/checkout@v4
         with:
           persist-credentials: false
-          lfs: false
+          lfs: true
+          fetch-depth: 0
       - name: Fetch Git LFS Objects
         run: |
-          git lfs install
-          git lfs pull -I 2>&1
+          git lfs install --force
+          git lfs pull
           echo "已拉取的LFS文件："
           git lfs ls-files
       - name: Build Gallery 🔧
